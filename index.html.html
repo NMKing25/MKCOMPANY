@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK-COMPANY | Le meilleur du digital, du design et du shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #172a45;
+            --accent-color: #00bcd4;
+            --text-color: #e2e8f0;
+            --text-muted: #8892b0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--white);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+            padding: 20px;
+            border-bottom: 1px solid rgba(0, 188, 212, 0.1);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* AMÉLIORATION : Ajout de la transition de bordure et du curseur pointer pour l'interactivité */
+        .service-card {
+            background-color: var(--secondary-color);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .advantages {
+            background-color: #0f223d;
+            border-radius: 16px;
+            padding: 50px;
+            margin: 40px 0;
+            border: 1px dashed rgba(0, 188, 212, 0.2);
+        }
+
+        .advantages-intro {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .adv-item {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .adv-item h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .adv-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #060d1a;
+            padding: 60px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-content h3 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .footer-content p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .phone-link {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .phone-sub {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .advantages {
+                padding: 30px 20px;
+            }
+            .phone-link {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1><span>MK-COMPANY</span> : Le meilleur du digital, du design et du shopping réuni en un seul endroit !</h1>
+            <p>Votre partenaire tout-en-un pour optimiser vos outils informatiques, sublimer votre image de marque et découvrir les produits tendance du moment.</p>
+            <a href="https://wa.me/2250153875803" class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactez-nous sur WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Nos Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-card" data-service="Maintenance Informatique">
+                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Maintenance Informatique</h3>
+                <p>Ne laissez plus un ordinateur lent ou en panne freiner votre activité. Nous prenons en charge la réparation, l'entretien et l'optimisation de vos équipements pour vous assurer une efficacité maximale au quotidien.</p>
+            </div>
+
+            <div class="service-card" data-service="Création Graphique">
+                <div class="service-icon"><i class="fas fa-palette"></i></div>
+                <h3>Création Graphique</h3>
+                <p>Une image professionnelle est la clé de votre succès. Nous concevons vos logos, flyers, cartes de visite et affiches publicitaires sur-mesure. Donnez vie à vos idées et sublimez votre image de marque avec un design moderne et impactant.</p>
+            </div>
+
+            <div class="service-card" data-service="Boutique">
+                <div class="service-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h3>Boutique</h3>
+                <p>Découvrez notre sélection exclusive ! Nous vous proposons une gamme de produits tendance et les dernières nouveautés du moment, rigoureusement choisis pour vous.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="advantages">
+            <div class="advantages-intro"> Un service rapide, moderne et adapté à votre budget.</div>
+            
+            <div class="advantages-grid">
+                <div class="adv-item">
+                    <h4><i class="fas fa-bolt" style="color: #ffc107;"></i> Réactivité</h4>
+                    <p>Nous savons que votre temps est précieux. Nos interventions sont rapides et efficaces.</p>
+                </div>
+                <div class="adv-item">
+                    <h4><i class="fas fa-chart-line" style="color: #00bcd4;"></i> Modernité</h4>
+                    <p>Nous restons à la pointe des tendances, que ce soit pour le design graphique ou les produits de notre boutique.</p>
+                </div>
+                <div class="adv-item">
+                    <h4><i class="fas fa-wallet" style="color: #4caf50;"></i> Accessibilité</h4>
+                    <p>Bénéficiez de services professionnels de qualité sans compromettre votre budget.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="padding: 0 0 30px 0;">
+            <div class="footer-content">
+                <h3>Prêt à vous lancer ?</h3>
+                <p>Vous avez un projet en tête ou besoin d'un dépannage rapide ? Notre équipe est à votre écoute. Contactez-nous directement :</p>
+                
+                <a href="tel:0153875803" class="phone-link"><i class="fas fa-phone-alt"></i> 01 53 87 58 03</a>
+                <div class="phone-sub">(Disponible sur WhatsApp pour une réponse rapide)</div>
+
+                <a href="https://wa.me/2250153875803" class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp
+                </a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 MK-COMPANY. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sélectionne toutes les cartes de service sur la page
+        document.querySelectorAll('.service-card').forEach(card => {
+            // Écoute le clic de l'utilisateur sur une carte
+            card.addEventListener('click', () => {
+                // Récupère la valeur de l'attribut customisé 'data-service'
+                const serviceName = card.getAttribute('data-service');
+                const phoneNumber = "2250153875803";
+                
+                // Formate le texte du message de manière personnalisée
+                const message = `Bonjour MK-COMPANY, je suis intéressé par votre service : ${serviceName}. Pouvez-vous m'en dire plus ?`;
+                
+                // Encode la chaîne de caractères pour corriger les espaces et les caractères accentués
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                
+                // Ouvre l'application ou la page web WhatsApp dans un nouvel onglet
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+
+</body>
+</html>
